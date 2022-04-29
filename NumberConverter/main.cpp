@@ -4,13 +4,14 @@
 #include <iostream>
 #include <string>
 
-// Declare functions
-
-int convertBinaryToDecimal(int binaryNumber);
-int convertDecimalToBinary(int decimalNumber);
+#include "DecimalConverter.h"
+#include "BinaryConverter.h"
 
 int main()
 {
+	DecimalConverter decimalConverter;
+	BinaryConverter binaryConverter;
+
 	int option = 0;
 
 	std::cout << "1 - Convert decimal to binary" << std::endl;
@@ -36,14 +37,14 @@ int main()
 	switch (option)
 	{
 	case 1:
-		result = convertDecimalToBinary(number);
+		result = decimalConverter.decimalToBinary(number);
 			
 		std::cout << "Decimal number " << number << " is equivalent to " << result << " in binary." << std::endl;
 
 		break;
 
 	case 2:
-		result = convertBinaryToDecimal(number);
+		result = binaryConverter.binaryToDecimal(number);
 			
 		std::cout << "Binary number " << number << " is equivalent to " << result << " in decimal." << std::endl;
 
@@ -53,47 +54,4 @@ int main()
 		std::cout << "Invalid option" << std::endl;
 		break;
 	}
-}
-
-// Convert binary to decimal.
-
-int convertBinaryToDecimal(int binaryNumber)
-{
-
-	// Print binary number
-
-	std::cout << "Binary number: " << binaryNumber << std::endl;
-
-	int decimalNumber = 0;
-	int remainder;
-	int i = 1;
-
-	while (binaryNumber != 0)
-	{
-		remainder = binaryNumber % 10;
-		binaryNumber /= 10;
-		decimalNumber += remainder * i;
-		i *= 2;
-	}
-
-	return decimalNumber;
-}
-
-// Convert decimal to binary.
-
-int convertDecimalToBinary(int decimalNumber)
-{
-	int binaryNumber = 0;
-	int remainder;
-	int i = 1;
-
-	while (decimalNumber != 0)
-	{
-		remainder = decimalNumber % 2;
-		decimalNumber /= 2;
-		binaryNumber += remainder * i;
-		i *= 10;
-	}
-
-	return binaryNumber;
 }

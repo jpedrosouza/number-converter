@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="NumberConverter.cpp" />
+    <ClCompile Include="BinaryConverter.cpp" />
+    <ClCompile Include="DecimalConverter.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinaryConverter.h" />
+    <ClInclude Include="DecimalConverter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
