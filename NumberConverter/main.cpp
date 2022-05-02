@@ -6,11 +6,15 @@
 
 int main()
 {
+	// Declare classes
+
 	DecimalConverter decimalConverter;
 	BinaryConverter binaryConverter;
 
 	int option = 0;
 
+	// Show menu
+	
 	std::cout << "1 - Convert decimal to binary" << std::endl;
 	std::cout << "" << std::endl;
 	std::cout << "2 - Convert binary to decimal" << std::endl;
@@ -30,6 +34,11 @@ int main()
 	std::cin >> number;
 
 	std::cout << "" << std::endl;
+
+	// Choose action based on user input (option) variable
+	// Option 1: Convert decimal to binary
+	// Option 2: Convert binary to decimal
+	// Other options: Invalid option
 
 	switch (option)
 	{
